@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anjali Chouhan | Portfolio</title>
     <style>
+        /* Smooth scrolling for the whole page */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 40px auto;
@@ -14,36 +19,118 @@
             background-color: #fcfcfc;
             padding: 0 20px;
         }
+
         header {
             text-align: center;
             padding-bottom: 20px;
-            border-bottom: 2px solid #2c3e50;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
+
+        /* Profile Picture Styling */
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #ecf0f1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
         h1 {
             margin-bottom: 5px;
             font-size: 2.5em;
             color: #2c3e50;
+            margin-top: 0;
         }
+
         p.subtitle {
             color: #555;
             font-size: 1.2em;
             margin-top: 0;
         }
+
+        /* Navigation Bar Styles */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #fcfcfc;
+            padding: 15px 0;
+            border-bottom: 2px solid #2c3e50;
+            border-top: 1px solid #ecf0f1;
+            margin-bottom: 30px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #2c3e50;
+        }
+
+        /* Section Styles */
+        section {
+            scroll-margin-top: 70px; 
+            margin-bottom: 40px;
+        }
+
         h2 {
             color: #2980b9;
             border-bottom: 1px solid #ecf0f1;
             padding-bottom: 5px;
-            margin-top: 30px;
+            margin-top: 0;
         }
+
         ul {
             padding-left: 20px;
         }
+
         li {
             margin-bottom: 10px;
         }
+
         .project-title {
             font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .pub-link {
+            text-decoration: none;
+            color: #2980b9;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+
+        .pub-link:hover {
+            color: #2c3e50;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 1.1em;
+            padding-bottom: 40px;
+        }
+
+        footer a {
+            color: #2980b9;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        footer a:hover {
             color: #2c3e50;
         }
     </style>
@@ -51,37 +138,49 @@
 <body>
 
     <header>
+        <img src="profile.jpg" alt="Anjali Chouhan" class="profile-pic">
+        
         <h1>Anjali Chouhan</h1>
         <p class="subtitle">PhD Scholar, Computer Science & Engineering<br>Indian Institute of Technology, Kanpur</p>
     </header>
 
-    <section>
+    <nav>
+        <a href="#publications">Publications</a>
+        <a href="#courses">Courses & Teaching</a>
+        <a href="#projects">Research Projects</a>
+        <a href="#honors">Honors & Awards</a>
+    </nav>
+
+    <section id="publications">
         <h2>Publications</h2>
         <ul>
-            <li>Anjali Chouhan, Sruti Srinivasa Ragavan, Amey Karkare, "CS Educator Challenges and Their Solutions: A Systematic Mapping Study," Computing Education Research, 18th Annual ACM India Compute Conference (COMPUTE), 2025.</li>
+            <li>
+                Anjali Chouhan, Sruti Srinivasa Ragavan, Amey Karkare, "CS Educator Challenges and Their Solutions: A Systematic Mapping Study," Computing Education Research, 18th Annual ACM India Compute Conference (COMPUTE), 2025.
+                <a href="https://arxiv.org/abs/2511.02876" target="_blank" class="pub-link" title="View on arXiv">📄 [arXiv]</a>
+            </li>
         </ul>
     </section>
 
-    <section>
-        <h2>Courses & Teaching (IIT Kanpur)</h2>
+    <section id="courses">
+        <h2>Courses & Teaching </h2>
         <ul>
-            <li><strong>Coursework:</strong> Computational Cognitive Science , Introduction to Machine Learning , Special Topics in Computer Science , Innovations In Computer Science and Engineering , Human Computer Interaction , PhD Thesis .</li>
-            <li><strong>Teaching Assistant:</strong> Design and Analysis of Algorithms , Randomized Algorithms , Fundamentals of Computing - I/II , Deep Reinforcement Learning.</li>
+            <li><strong>Coursework:</strong> Computational Cognitive Science (CS 786), Introduction to Machine Learning, Special Topics in Computer Science, Innovations In Computer Science and Engineering, Human Computer Interaction, PhD Thesis.</li>
+            <li><strong>Teaching Assistant:</strong> Design and Analysis of Algorithms, Randomized Algorithms, Fundamentals of Computing - I/II, Deep Reinforcement Learning.</li>
         </ul>
     </section>
 
-    <section>
-        <h2>Research Projects (IIT Kanpur)</h2>
+    <section id="projects">
+        <h2>Research Projects </h2>
         <ul>
             <li><span class="project-title">LLM-Based PISA Questions (Sawaal Machine):</span> Designed and implemented an LLM-based pipeline, deployed as the tool Sawaal Machine, to generate assessment items aligned with PISA standards across Math, Science, and Reading domains. Built domain-specific question banks and randomized test generation tools for scalable assessment design.</li>
             <li><span class="project-title">Bridging the Gap Between Cognitive Science And Neural Network: Common Sense:</span> Designed and Developed a Hopfield network model from scratch, achieving over 70% accuracy on the MNIST handwritten digit classification benchmark using basic numpy and pandas libraries.</li>
             <li><span class="project-title">RAG in LLM:</span> Implemented RAG to generate new data interpretation questions using openai API via creating a separate knowledge base for data interpretation questions. Performed A/B Testing in order to compare human vs. AI generated data interpretation questions in Psychopy.</li>
-            <li><span class="project-title">Human-Computer Interaction :</span> Redesigned the ECI Voter Portal using Gestalt principles to enhance usability, visual clarity, and mobile responsiveness. Conducted thematic analysis of 30+ Amazon Alexa user reviews to identify key UX issues. Co-developed Hot Desker, a full-stack web-based seat booking system for hybrid workplaces.</li>
+            <li><span class="project-title">Human-Computer Interaction (CS798H):</span> Redesigned the ECI Voter Portal using Gestalt principles to enhance usability, visual clarity, and mobile responsiveness. Conducted thematic analysis of 30+ Amazon Alexa user reviews to identify key UX issues. Co-developed Hot Desker, a full-stack web-based seat booking system for hybrid workplaces.</li>
         </ul>
     </section>
 
-    <section>
-        <h2>Extracurricular Honors & Awards (IIT Kanpur)</h2>
+    <section id="honors">
+        <h2>Extracurricular Honors & Awards </h2>
         <ul>
             <li>Outstanding Fresher Award, Y'24, IIT Kanpur.</li>
             <li>PG Student Senator, PhD Y'24, IIT Kanpur.</li>
@@ -92,6 +191,14 @@
             <li>Two-times Gold Medalist in Squash, Inferno, IIT Kanpur.</li>
         </ul>
     </section>
+
+    <footer>
+        <p>
+            <a href="https://github.com/anjalic24" target="_blank">GitHub</a> | 
+            <a href="https://www.researchgate.net/scientific-contributions/Anjali-Chouhan-2330135355" target="_blank">ResearchGate</a> | 
+            
+        </p>
+    </footer>
 
 </body>
 </html>
